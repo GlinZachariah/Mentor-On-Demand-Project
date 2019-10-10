@@ -1,0 +1,74 @@
+[
+  {
+    "coursedetail":{
+      "courseid":"CS101",
+      "coursename":"Core Java",
+      "technology":"Git",
+      "trainername":"l",
+      "charges":7000,
+      "commission":0.1
+    },
+    "paymentstatus":"paid",
+    "progress":0.75,
+    "rating":3,
+    "startdate":"",
+    "status":"on going",
+    "timeslot":"8",
+    "username":"n"
+
+  },
+  {
+    "coursedetail":{
+      "courseid":"CS102",
+      "coursename":"Python Fundamentals",
+      "technology":"Python",
+      "trainername":"l",
+      "charges":7000,
+      "commission":0.3
+    },
+    "paymentstatus":"na",
+    "progress":0,
+    "rating":0,
+    "startdate":"",
+    "status":"rejected",
+    "timeslot":"8",
+    "username":"n"
+
+  },
+  {
+    "coursedetail":{
+      "courseid":"CS103",
+      "coursename":"Spring Basics of MVC",
+      "technology":"Spring",
+      "trainername":"thomas zac",
+      "charges":7000,
+      "commission":0.2
+    },
+    "paymentstatus":"na",
+    "progress":0,
+    "rating":0,
+    "startdate":"",
+    "status":"proposal pending",
+    "timeslot":"8",
+    "username":"n"
+
+  },
+  {
+    "coursedetail":{
+      "courseid":"CS104",
+      "coursename":"Angular Intermediate",
+      "technology":"Angular",
+      "trainername":"l",
+      "charges":7000,
+      "commission":0.2
+    },
+    "paymentstatus":"pending",
+    "progress":0,
+    "rating":0,
+    "startdate":"",
+    "status":"approved",
+    "timeslot":"8",
+    "username":"n"
+
+  }
+]

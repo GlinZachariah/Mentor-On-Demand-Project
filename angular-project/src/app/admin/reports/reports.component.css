@@ -1,0 +1,16 @@
+#content-box {
+  margin-top: 75px;
+  min-height: 450px;
+  max-height: 750px;
+  overflow-y: auto;
+}
+
+.table thead th, .table-bordered td, .table-bordered th {
+  border-color: #1D0033;
+  color: #1d0033;
+}
+
+#generateRep{
+  display: block;
+  margin:auto;
+}

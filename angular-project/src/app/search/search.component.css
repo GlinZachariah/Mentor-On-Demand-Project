@@ -1,0 +1,17 @@
+#search-box {
+  margin-top: 55px;
+}
+
+#search-box>.jumbotron {
+  height: 95%;
+}
+
+#search-result-box {
+  margin-top: 55px;
+}
+
+#search-result-box>.jumbotron {
+  height: 95%;
+  max-height: 750px;
+  overflow-y: auto;
+}

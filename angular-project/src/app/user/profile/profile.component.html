@@ -1,0 +1,134 @@
+<div class="container content">
+
+    <div class="jumbotron " id="profile-box">
+      <h1 class="display-4 theme-color-5">Hello {{loggedUser}},</h1>
+      <blockquote class="lead theme-color-4 blockquote">
+        <p class="mb-0">“Nothing will work unless you do.” –Maya Angelou</p>
+      </blockquote>
+      <hr class="my-4">
+
+
+
+
+      <div id="accordion">
+        <div class="card">
+            <app-alert [alert]="alert"></app-alert>
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link theme-color-5" data-toggle="collapse" data-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                Edit Profile
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+
+              <div class="row">
+                <div class="col-lg-5 ml-auto mr-auto">
+                    <app-alert [alert]="saved" *ngIf="formSaved"></app-alert>
+                   <form *ngIf="editDetails" [formGroup]="editDetails" (ngSubmit)="updateProfile(loggedPwd)">
+                    
+                    <div class="form-group">
+                      <label for="exampleInputPassword1" class="theme-color-5">Change Password</label>
+                      <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="loggedPwd" name="loggedPwd"
+                        placeholder="Enter New Password" />
+                    </div>
+
+                    <button type="submit" class="btn theme-bgcolor-2 text-white mt-2">
+                      Save
+                    </button>
+                  </form>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link theme-color-5 collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                aria-expanded="false" aria-controls="collapseTwo">
+                Payment Mode
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse " aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+
+
+
+              <div class="row">
+                <div class="col-lg-5 ml-auto mr-auto">
+                  <form *ngIf="cardDetails" [formGroup]="cardDetails" (ngSubmit)="saveCardDetails(cardDetails.value)">
+                    <h3 class="theme-color-5">Card Details</h3>
+                    <div class="form-group">
+                      <label for="card-number" class="theme-color-5">Card Number</label>
+                      <input type="text" class="form-control" id="card-number" formControlName="cardNumber" placeholder="Valid Card Number"
+                        autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-lg-7 col-sm-10 col-xs-8 m-auto">
+                          <label for="card-month" class="theme-color-5">Expiry
+                            Date</label>
+                          <div class="row ">
+                            <input type="number" formControlName="cardExpM" class="form-control col-lg-4" id="card-month" min="1" max="12"
+                              placeholder="MM" />
+                            <input type="number" formControlName="cardExpY" class="form-control col-lg-4" id="card-year" min="01" max="99"
+                              placeholder="YY" />
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-10 m-auto">
+                          <label for="card-cvv" class="theme-color-5">CV Code</label>
+                          <div class="row">
+                            <input type="number" formControlName="cardCV"  class="form-control mr-2" id="card-cvv" min="1" max="12"
+                              placeholder="CV" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn theme-bgcolor-2 text-white mt-3">
+                      Save
+                    </button>
+                  </form>
+                </div>
+              </div>
+
+
+
+
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+              <button class="btn btn-link theme-color-5 collapsed" data-toggle="collapse" data-target="#collapseThree"
+                aria-expanded="false" aria-controls="collapseThree">
+                Help & Support
+              </button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+              <h2 class="theme-color-5">Help & Support</h2>
+              <p class="theme-color-4">For more details contact</p>
+              <span class="ml-auto">Email us at <a href="mailto:help@learnapp.com">help@learnapp.com</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+    </div>
+  </div>

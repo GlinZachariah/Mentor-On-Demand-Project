@@ -1,0 +1,25 @@
+<div id="header" class="theme-bgcolor-4 text-white">
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand ml-5" [routerLink]="['/']" id="site-title">Learn App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler1"
+      aria-controls="navbarToggler1" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa fa-bars bg-light"></i>
+    </button>
+
+    <div class=" collapse navbar-collapse" id="navbarToggler1">
+      <div class="navbar-nav ml-auto mt-2 mt-lg-0 ">
+       <app-navbar></app-navbar>
+      </div>
+    </div>
+  </nav>
+</div>
+<router-outlet></router-outlet>
+<div id="footer" class="theme-bgcolor-4 text-white">
+  <div class="row">
+      <span id="footer-content">
+          Copy rights reserved &copy; 2019
+      </span>
+
+  </div>
+<!--   <a id="admin" [routerLink]="['admin','signin']">Admin Login</a> -->
+</div>

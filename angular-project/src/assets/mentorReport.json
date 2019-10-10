@@ -1,0 +1,26 @@
+[
+  {
+    "username":"glin zac",
+    "courseid":"CS102",
+    "progress":0.75,
+    "cost":8000
+  },
+  {
+    "username":"thomas zac",
+    "courseid":"CS102",
+    "progress":0.25,
+    "cost":8000
+  },
+  {
+    "username":"karun",
+    "courseid":"CS103",
+    "progress":0.5,
+    "cost":7000
+  },
+  {
+    "username":"kiran",
+    "courseid":"CS103",
+    "progress":0.65,
+    "cost":7000
+  }
+]

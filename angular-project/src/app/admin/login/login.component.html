@@ -1,0 +1,47 @@
+<div class="container content">
+  <div class="row">
+      <div class="col-lg-5 col-md-8 col-sm-8 mt-5" id="login-box">
+
+
+          <app-alert [alert]="alert"></app-alert>
+
+          <div class="card">
+              <div class="card-header  theme-bgcolor-2 text-white card-title">
+                  <h2>Admin Sign In</h2>
+              </div>
+              <div class="card-body theme-color-5">
+                  <div class="card-text">
+                      <form [formGroup]="signInData" (ngSubmit)="checkAdmin(signInData.value)" >
+                          <div class="form-group">
+                              <label for="username" class="theme-color-5">Username</label>
+                              <input type="email" class="form-control" id="username" placeholder="Enter Email Id"
+                                  autocomplete="off"  formControlName="username" [class.is-invalid]="signInData.get('username').invalid && signInData.get('username').touched">
+                          </div>
+                          <div *ngIf="signInData.get('username').valid || signInData.get('username').touched ">
+                                        <small *ngIf="signInData.get('username').errors?.required" class="text-danger">Please enter an Admin Username</small>
+                    
+                            </div>
+
+                          <div class="form-group">
+                              <label for="exampleInputPassword1" class="theme-color-5">Password</label>
+                              <input type="password" class="form-control" id="exampleInputPassword1"
+                                  placeholder="Password" formControlName="password" [class.is-invalid]="signInData.get('password').invalid && signInData.get('password').touched">
+                          </div>
+                          <div *ngIf="signInData.get('password').valid || signInData.get('password').touched">
+                                        <small *ngIf="signInData.get('password').errors?.required" class="text-danger">Please enter a Valid Password </small>
+                    
+                            </div>
+
+
+                          <button  [disabled]="!signInData.valid" type="submit" class="btn theme-bgcolor-2 text-white mt-2">Submit</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+
+
+
+
+      </div>
+  </div>
+</div>

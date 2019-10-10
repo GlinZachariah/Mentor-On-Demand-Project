@@ -1,0 +1,38 @@
+<div class="container content">
+  <!-- Container Content -->
+  <div class="jumbotron" id="content-box">
+    <h1 class="display-6 theme-color-5">Users</h1>
+    <hr class="my-3" />
+
+    <div class="conatiner " *ngFor="let user of UserData">
+      <div class="row result-item theme-bgcolor-3 p-2 text-white">
+        <div class="col-lg-4 col-md-4 col-sm-10">
+          {{user.userName}}
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-10">
+          {{user.fullName}}
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-10">
+          <button class="btn theme-bgcolor-2 text-white search-item-btn" (click)="updatePermission(user)" >{{user.accountStatus|uppercase}}</button>
+        </div>
+      </div>
+    </div>
+    <hr class="my-3" />
+    <h1 class="display-6 theme-color-5">Mentors</h1>
+    <hr class="my-3" />
+    <div class="conatiner " *ngFor="let user of MentorData">
+      <div class="row result-item theme-bgcolor-3 p-2 text-white">
+        <div class="col-lg-4 col-md-4 col-sm-10">
+          {{user.userName}}
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-10">
+          {{user.fullName}}
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-10">
+          <button class="btn theme-bgcolor-2 text-white search-item-btn" (click)="updatePermission(user)">{{user.accountStatus|uppercase}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Container Ends -->
+</div>

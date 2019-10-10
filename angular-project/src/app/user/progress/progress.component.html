@@ -1,0 +1,156 @@
+<div class="container content">
+    <!-- Container Content -->
+
+    <div id="content-box">
+        <div class="jumbotron">
+            <h1 class="display-6 theme-color-5">Training In Progress</h1>
+            <hr class="my-3" />
+            <div *ngFor="let data of traingingProgressData;let i =index">
+
+                <div *ngIf="data.courseStatus=='On Going'">
+                    <div class="row result-item theme-bgcolor-3 text-white">
+                        <div class="col-lg-3 col-md-3 col-sm-10">
+                            <img src="../../../assets/course-img.png" class="progress-result-item-img mt-3"
+                                alt="technology-name">
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-10 pt-3 pb-3">
+                            <div class="card theme-color-5 flex">
+
+                                <div class="card-body ml-0 progress-panel ">
+                                    <h4>{{data.courseName}}</h4>
+                                    <h5>{{data.trainerName}}
+
+                                        <span class="progress-status theme-color-2">
+                                            <span *ngFor="let star of rating"
+                                                (click)="data.rating = updateRating(data.rating)">
+                                                <span
+                                                    *ngIf="star<=data.rating && data.rating!=0; then Block1 else Block2"></span>
+                                                <ng-template #Block1><i class="fa fa-star"></i></ng-template>
+                                                <ng-template #Block2><i class="fa fa-star-o"></i></ng-template>
+                                            </span>
+                                        </span></h5>
+                                    <h6>{{data.technology}} <span class="progress-status">
+                                            <span class="badge theme-bgcolor-2 p-2 text-white">{{data.courseStatus}}</span>
+                                        </span></h6>
+                                    <label for="formControlRange">Update Progress</label>
+                                    <input type="range" class="form-control-range" id="formControlRange" min="0"
+                                        max="100" [value]="data.progress"
+                                        (change)="data.progress = changeProgress($event)">
+                                </div>
+                                <div class="card-footer row flex progress-panel-footer">
+                                    <div class="progress theme-bgcolor-1 progress-btn">
+                                        <div class="progress-bar theme-bgcolor-4" role="progressbar"
+                                            name="courseprogress" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100" [style.width]="data.progress+'%'">{{data.progress}}%
+                                        </div>
+                                    </div> <span class="progress-status">
+                                        <button class=" btn theme-bgcolor-2 text-white"
+                                            (click)="saveData(data,i)">Save Changes</button>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="data.courseStatus=='Rejected'">
+                    <div class="row result-item theme-bgcolor-3 text-white">
+                        <div class="col-lg-3 col-md-3 col-sm-10">
+                            <img src="../../../assets/course-img.png" class="progress-result-item-img mt-3"
+                                alt="technology-name">
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-10 pt-3 pb-3">
+                            <div class="card theme-color-5 flex">
+
+                                <div class="card-body ml-0 progress-panel ">
+                                    <h4>{{data.courseName}}</h4>
+                                    <h5>{{data.trainerName}}</h5>
+                                    <h6>{{data.technology}} <span class="progress-status">
+                                            <span class="badge badge-danger p-2 text-white">{{data.courseStatus}}</span>
+                                        </span></h6>
+                                </div>
+                                <div class="card-footer row flex progress-panel-footer">
+                                    <span class="progress-status">
+                                        <button class=" btn theme-bgcolor-2 text-white " (click)="deleteCourse(data.coursedetail.courseid)">Delete Proposal</button>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="data.courseStatus=='Under Review'">
+                    <div class="row result-item theme-bgcolor-3 text-white">
+                        <div class="col-lg-3 col-md-3 col-sm-10">
+                            <img src="../../../assets/course-img.png" class="progress-result-item-img mt-3"
+                                alt="technology-name">
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-10 pt-3 pb-3">
+                            <div class="card theme-color-5 flex">
+
+                                <div class="card-body ml-0 progress-panel ">
+                                    <h4>{{data.courseName}}</h4>
+                                    <h5>{{data.trainerName}}</h5>
+                                    <h6>{{data.technology}} <span class="progress-status">
+                                            <span class="badge badge-warning p-2 text-white">{{data.courseStatus}}</span>
+                                        </span></h6>
+                                </div>
+                                <div class="card-footer row flex progress-panel-footer">
+                                        <span class="progress-status">
+                                                
+                                            </span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="data.courseStatus=='Approved'">
+                    <div class="row result-item theme-bgcolor-3 text-white">
+                        <div class="col-lg-3 col-md-3 col-sm-10">
+                            <img src="../../../assets/course-img.png" class="progress-result-item-img mt-3"
+                                alt="technology-name">
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-10 pt-3 pb-3">
+                            <div class="card theme-color-5 flex">
+
+                                <div class="card-body ml-0 progress-panel ">
+                                    <h4>{{data.courseName}}</h4>
+                                    <h5>{{data.trainerName}}</h5>
+                                    <h6>{{data.technology}} <span class="progress-status">
+                                            <span class="badge badge-success p-2 text-white">{{data.courseStatus}}</span>
+                                        </span></h6>
+                                </div>
+                                <div class="card-footer row flex progress-panel-footer">
+                                    <div class="progress theme-bgcolor-1 progress-btn">
+                                        <div class="progress-bar theme-bgcolor-4" role="progressbar" style="width: 0%"
+                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0</div>
+                                    </div> <span class="progress-status">
+                                        <button class=" btn theme-bgcolor-2 text-white "
+                                            (click)="updatePayment(data,i)"> Make Payment</button>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+</div>

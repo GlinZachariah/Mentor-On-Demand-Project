@@ -1,0 +1,68 @@
+
+
+<div *ngFor="let result of results;let Idx =index"  >
+    <div data-toggle="modal" [attr.data-target]="'#exampleModalCenter'+Idx" [id]='Idx'>
+        <div class="row result-item theme-bgcolor-3 p-3 text-white">
+          <div class="col-lg-3 col-md-3 col-sm-10">
+            <img src="../../assets/course-img.png" class="result-item-img" alt="trainer-image">
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-10">
+            {{result.trainerName}}
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-10">
+            {{result.courseName}}
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-10">
+            <button class="btn theme-bgcolor-2 text-white search-item-btn">Propose Training</button>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="modal fade" [id]="'exampleModalCenter'+Idx" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content theme-color-5">
+            <div class="modal-header">
+              <h5 class="modal-title " id="exampleModalLongTitle">Course ID : {{result.courseId}}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+               
+              <h4>Trainer Name : {{result.trainerName | titlecase}}</h4>
+              <h6>Years of Exp : {{result.experience}}</h6>
+              <br>
+              <h4>Course Name : {{result.courseName | titlecase}}</h4>
+              <h5>Technology : {{result.technology}}</h5>
+              <h5>Total Time : {{result.totalTime}} hrs.</h5>
+              <h5>Avg. Course Rating : {{result.avgCourseRating}}</h5>
+              <hr>
+              <h6>No. of Trainees Attended : {{result.totalCount}}</h6>
+              <h6>No. of Trainees Active : {{result.activeCount}}</h6>
+              <h6>No. of Trainees Completed : {{result.completedCount}}</h6>
+              <div class="p-2">
+                Material Type <br>
+                <span class="badge theme-bgcolor-2  text-white m-1 p-2" *ngIf="result.materialBlog">Blog</span>
+                <span class="badge theme-bgcolor-2  text-white m-1 p-2" *ngIf="result.materialPPT">PPT</span>
+                <span class="badge theme-bgcolor-2  text-white m-1 p-2" *ngIf="result.materialDemo">Demo</span>
+                <span class="badge theme-bgcolor-2  text-white m-1 p-2" *ngIf="result.materialVideo">Video</span>
+              </div>
+
+              <div class="p-2">
+                Training Charges :{{result.trainingCharges|currency:"INR"}} /-<br>
+                Service Charges : {{result.trainingCharges*result.serviceCharges/100 |currency:"INR"}} /-<br>
+                <b>Total Charges : {{result.trainingCharges*result.serviceCharges/100 +result.trainingCharges|currency:"INR" }} /-</b>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <input type="button" class="btn theme-bgcolor-2 text-white" value="Propose Training"  (click)="proposeTraining(Idx,result)">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+

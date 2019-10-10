@@ -1,0 +1,30 @@
+<div class="container content">
+  <!-- Container Content -->
+  <div class="jumbotron " id="content-box">
+    <h1 class="display-6 theme-color-5">Payments Log</h1>
+
+    <hr class="my-4">
+    <div class="row result-item theme-bgcolor-3 p-4 text-white" *ngFor="let log of PaymentData">
+      <div class="col-lg-2 col-md-2 col-sm-10">
+        {{log.paymentDate}}
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-10">
+        {{log.userName}}
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-10">
+        {{log.courseId}}
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-10">
+        [Mentor] {{log.trainerName}}
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-10">
+        {{log.paymentAmount| currency:"INR"}}
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-10">
+        Commission(%) : {{log.commissionAmount|  percent }}
+      </div>
+
+    </div>
+  </div>
+  <!-- Container Ends -->
+</div>

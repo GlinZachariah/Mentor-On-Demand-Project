@@ -1,0 +1,72 @@
+
+<div class="container content">
+    <div class="jumbotron " id="profile-box">
+      <h1 class="display-6 theme-color-5">Profile</h1>
+      <hr class="my-4">
+
+          <div class="card">
+              <div class="card-body theme-color-5">
+                  <div class="card-text">
+
+
+
+                      <form [formGroup]="formMentor" (ngSubmit)="saveMentorDetails(formMentor.value,materialType.value)">
+                        
+
+                          <div class="form-group">
+                              <label for="select-time-zone">Time Zone</label>
+                              <select [attr.disabled]="true" class="form-control " id="select-time-zone" formControlName="timeZoneControl" >
+                                  <option [value]="timeZone.text" *ngFor="let timeZone of timeZones">{{timeZone.text}}</option>
+                              </select>
+                          </div>
+
+                          <div class="form-group">
+                              <label for="exampleFormControlSelect3">Time Slot (Preferred*)</label>
+                              <select [attr.disabled]="true" class="form-control" id="exampleFormControlSelect3" formControlName="timeSlotControl">
+                                  <option *ngFor="let timeSlot of timeSlots" [value]="timeSlot.value">{{timeSlot.text}}</option>
+
+                              </select>
+                              <small id="timeHelp" class="form-text text-muted">Additional time slots can be
+                                  added later.</small>
+                          </div>
+
+
+                          <div class="form-group" id="matrial-type" [formGroup]="materialType">
+                              <label class="theme-color-5">Material Type</label> <br>
+                              <input [attr.disabled]="true" type="checkbox" id="matrial-type-video" formControlName="video" class=" form-check-inline mr-2 ml-2">
+                              <label for="matrial-type-video">Videos</label>
+                              <input type="checkbox" id="matrial-type-blog"formControlName="blog" class=" form-check-inline mr-2 ml-2">
+                              <label for="matrial-type-blog">Blog</label>
+                              <input [attr.disabled]="true" type="checkbox" id="matrial-type-ppt" formControlName="ppt" class=" form-check-inline mr-2 ml-2">
+                              <label for="matrial-type-ppt">PPTs</label>
+                              <input [attr.disabled]="true" type="checkbox" id="matrial-type-demo" formControlName="demo" class=" form-check-inline mr-2 ml-2">
+                              <label for="matrial-type-demo">Demos</label>
+                          </div>
+                          <div class="form-group">
+                              <label for="profile-url" class="theme-color-5">LinkedIn Profile (URL)</label>
+                              <input [attr.disabled]="true" type="text" class="form-control" id="profile-url" formControlName="linkedInUrl">
+                          </div>
+
+                          <div class="form-group">
+                              <label for="year-exp" class="theme-color-5">Experience (in years)</label>
+                              <input [attr.disabled]="true" type="number" class="form-control" id="year-exp" min="0" formControlName="experience">
+                          </div>
+
+                          <div class="form-group">
+                              <label for="exampleInputPassword1" class="theme-color-5">Change Password</label>
+                              <input type="password" class="form-control" id="exampleInputPassword1"
+                                  placeholder="Password" formControlName="password">
+                          </div>
+
+                          <button type="submit" class="btn theme-bgcolor-2 text-white mt-2">Submit</button>
+                      </form>
+
+
+
+                  </div>
+              </div>
+          </div>
+      </div>
+
+</div>
+

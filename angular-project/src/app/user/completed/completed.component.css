@@ -1,0 +1,6 @@
+#content-box {
+  margin-top: 75px;
+  min-height: 450px;
+  max-height: 750px;
+  overflow-y: auto;
+}

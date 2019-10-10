@@ -1,0 +1,32 @@
+<div class="container content">
+  <!-- Content Begins-->
+  <div class="jumbotron " id="content-box">
+    <h1 class="display-6 theme-color-5">Commission</h1>
+
+    <hr class="my-4">
+    <div class="row result-item theme-bgcolor-3 p-4 text-white" *ngFor="let course of currentCourses">
+      <div class="col-lg-2 col-md-2 col-sm-10">
+        {{course.courseId}}
+      </div>
+
+      <div class="col-lg-2 col-md-2 col-sm-10">
+        {{course.trainerName}}
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-10">
+        {{course.courseCharge | currency:"INR"}}
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-10">
+        Current Commission: {{course.commission| percent}}
+      </div>
+      <form [formGroup]="updateCommission" (ngSubmit)="course.commission = newCommission(course.courseId,updateCommission.value.newcoursecomm)">
+      <div class="col-lg-2 col-md-2 col-sm-10" >
+        <input type="number" min="0" max="100" placeholder="New Percent" formControlName="newcoursecomm">
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-10">
+        <button type="submit" class="btn theme-bgcolor-2 text-white mt-2" >Save</button>
+      </div>
+    </form>
+    </div>
+  </div>
+  <!-- Content Ends -->
+</div>

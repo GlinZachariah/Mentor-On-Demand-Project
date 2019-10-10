@@ -1,0 +1,26 @@
+[
+    {
+        "technology":"Angular",
+        "courseId":"CS102",
+        "totalTraineeCount":10,
+        "traineeCompleted":8,
+        "traineeInProgress":2,
+        "revenueEarned":7000
+    },
+    {
+        "technology":"Python",
+        "courseId":"CS103",
+        "totalTraineeCount":7,
+        "traineeCompleted":4,
+        "traineeInProgress":2,
+        "revenueEarned":12000
+    },
+    {
+        "technology":"Core Java",
+        "courseId":"CS104",
+        "totalTraineeCount":20,
+        "traineeCompleted":15,
+        "traineeInProgress":3,
+        "revenueEarned":25000
+    }
+]

@@ -1,0 +1,106 @@
+[
+  {
+    "courseId":"CS102",
+    "courseName":"Core Java",
+    "trainerName":"Mathew James",
+    "totalTrainee": 10,
+    "trainerSkills": [
+      {
+        "name":"Angular"
+      },
+      {
+        "name":"Python"
+      },
+      {
+        "name":"Git"
+      }
+    ],
+    "courseType":{
+      "video":true,
+      "blog":false,
+      "ppt":false,
+      "demo":true
+    },
+    "experience":5,
+    "trainerCharges":7000,
+    "serviceCharges":0.1
+  },
+  {
+    "courseId":"CS103",
+    "courseName":"Java Fundamentals",
+    "trainerName":"Mathew James",
+    "totalTrainee": 50,
+    "trainerSkills": [
+      {
+        "name":"Angular"
+      },
+      {
+        "name":"Python"
+      },
+      {
+        "name":"Git"
+      }
+    ],
+    "courseType":{
+      "video":true,
+      "blog":false,
+      "ppt":false,
+      "demo":true
+    },
+    "experience":5,
+    "trainerCharges":2000,
+    "serviceCharges":0.15
+  },
+  {
+    "courseId":"CS104",
+    "courseName":"Java Intermediate",
+    "trainerName":"Mathew James",
+    "totalTrainee": 20,
+    "trainerSkills": [
+      {
+        "name":"Angular"
+      },
+      {
+        "name":"Python"
+      },
+      {
+        "name":"Git"
+      }
+    ],
+    "courseType":{
+      "video":true,
+      "blog":false,
+      "ppt":false,
+      "demo":true
+    },
+    "experience":5,
+    "trainerCharges":5000,
+    "serviceCharges":0.2
+  },
+  {
+    "courseId":"CS104",
+    "courseName":"Core Java",
+    "trainerName":"glin zac",
+    "totalTrainee": 20,
+    "trainerSkills": [
+      {
+        "name":"Angular"
+      },
+      {
+        "name":"Python"
+      },
+      {
+        "name":"Git"
+      }
+    ],
+    "courseType":{
+      "video":true,
+      "blog":false,
+      "ppt":false,
+      "demo":true
+    },
+    "experience":5,
+    "trainerCharges":5000,
+    "serviceCharges":0.2
+  }
+]

@@ -1,0 +1,52 @@
+[
+    {
+        "timestamp": "4/06/2018",
+        "username": "karun jossy",
+        "courseId": "CS102",
+        "approvalStatus": "approved",
+        "paymentStatus": "paid",
+        "timeslot": 8,
+        "courseProgress": 0.20,
+        "withdrawCount": 0
+    },
+    {
+        "timestamp": "5/16/2018",
+        "username": "karun jossy",
+        "courseId": "CS103",
+        "approvalStatus": "pending",
+        "paymentStatus": "unpaid",
+        "timeslot": 10,
+        "courseProgress": 0,
+        "withdrawCount": 0
+    },
+    {
+        "timestamp": "7/12/2018",
+        "username": "karun jossy",
+        "courseId": "CS104",
+        "approvalStatus": "pending",
+        "paymentStatus": "unpaid",
+        "timeslot": 11,
+        "courseProgress": 0,
+        "withdrawCount": 0
+    },
+    {
+        "timestamp": "4/06/2018",
+        "username": "kiran",
+        "courseId": "CS102",
+        "approvalStatus": "approved",
+        "paymentStatus": "paid",
+        "timeslot": 8,
+        "courseProgress": 0.55,
+        "withdrawCount": 2
+    },
+    {
+        "timestamp": "4/06/2018",
+        "username": "kiran",
+        "courseId": "CS102",
+        "approvalStatus": "approved",
+        "paymentStatus": "unpaid",
+        "timeslot": 2,
+        "courseProgress": 0.45,
+        "withdrawCount": 1
+    }
+]

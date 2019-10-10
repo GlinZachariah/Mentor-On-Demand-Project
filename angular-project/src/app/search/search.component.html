@@ -1,0 +1,47 @@
+<div class="container content">
+    <div class="row">
+      <div class="col-lg-4" id="search-box">
+        <div class="jumbotron">
+          <h1 class="display-6 theme-color-5">Search Trainings</h1>
+          <p class="lead">Search for all Available courses</p>
+          <hr class="my-3" />
+
+          <form [formGroup]="SearchForm" (ngSubmit)="SearchTrainer(SearchForm.value)">
+            <div class="form-group ">
+              <label for="search-input" class="ml-2">Search Technology</label><br />
+              <select class="form-control" id="search-input" formControlName="technology" >
+                  <option *ngFor="let mentorSkill of mentorSkills" [value]="mentorSkill.skillName" >{{mentorSkill.skillName}}</option>
+              </select>
+            </div>
+            <div class="form-group ">
+              <label for="from-input" class="ml-2">Date</label><br />
+              <input type="date" id="from-input" class="form-control " formControlName="startDate" />
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect3">Time Slot (Preferred*)</label>
+              <select class="form-control " id="exampleFormControlSelect3"  formControlName="timeSlot">
+                  <option *ngFor="let timeSlot of timeSlots" [value]="timeSlot.value">{{timeSlot.text}}</option>
+              </select>
+
+            </div>
+
+            <div >
+              <button class="btn theme-bgcolor-2 text-white btn-lg" href="#" type="submit">Search</button>
+            </div>
+          </form>
+
+
+        </div>
+      </div>
+
+
+      <div class="col-lg-8" id="search-result-box">
+          <div class="jumbotron">
+              <h1 class="display-6 theme-color-5">Search Results</h1>
+              <hr class="my-3" />
+          <app-result [resultData]="searchResult"></app-result>
+          </div>
+      </div>
+
+    </div>
+  </div>

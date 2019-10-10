@@ -1,0 +1,212 @@
+<div class="container content">
+
+  <div class="jumbotron " id="profile-box">
+      <h1 class="display-4 theme-color-5">Hello {{mentorname}},</h1>
+      <blockquote class="lead theme-color-4 blockquote">
+          <p class="mb-0">“Nothing will work unless you do.” –Maya Angelou</p>
+      </blockquote>
+      <hr class="my-4">
+
+
+
+
+      <div id="accordion">
+          <div class="card">
+              <div class="card-header" id="headingZero">
+                  <h5 class="mb-0">
+                      <button class="btn btn-link theme-color-5 collapsed" data-toggle="collapse"
+                          data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Add Courses
+                      </button>
+                  </h5>
+              </div>
+
+              <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">
+                      <!-- Card Body begin -->
+                      <div class="row">
+                            
+                          <div class="col-lg-5 ml-auto mr-auto">
+                                <app-alert [alert]="alertAddCourse"></app-alert>
+                              <form *ngIf="addCourseForm" [formGroup]="addCourseForm" (ngSubmit)="addCourse(addCourseForm.value)">
+                                <div class="form-group">
+                                      <label for="course-name" class="theme-color-5">Course Id</label>
+                                      <input type="text" class="form-control" id="course-id"
+                                          placeholder="Enter Course Id" formControlName="courseId" autocomplete="off">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="course-name" class="theme-color-5">Course Name</label>
+                                      <input type="text" class="form-control" id="course-name"
+                                          placeholder="Enter Course Name" formControlName="courseName" autocomplete="off">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="course-inhrs" class="theme-color-5">Course Duration (in
+                                          hrs)</label>
+                                      <input type="number" formControlName="courseDuration" class="form-control" id="course-inhrs" min="20"
+                                          value="20" />
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="select-skill-list">Select Technology</label>
+                                      <select class="form-control" id="select-skill-list" formControlName="courseTechnology">
+                                            <option *ngFor="let mentorSkill of mentorSkills" [value]="mentorSkill.skillName" >{{mentorSkill.skillName}}</option>
+                                      </select>
+                                  </div>
+
+                                  <div class="form-group ">
+                                      <label for="course-cost" class="theme-color-5">Course Cost</label>
+                                      <div class="input-group">
+                                          <div class="input-group-prepend">
+                                              <span class="input-group-text">&#8377;</span>
+                                          </div>
+                                          <input type="number" min="0" class="form-control" id="course-cost"
+                                              placeholder="Enter Proposed Cost" autocomplete="off" formControlName="courseCost">
+                                      </div>
+                                  </div>
+
+                                  <button type="submit" class="btn theme-bgcolor-2 text-white mt-2">
+                                      Add Course
+                                  </button>
+                              </form>
+                          </div>
+                      </div>
+                      <!-- Card end  -->
+                  </div>
+              </div>
+          </div>
+
+          <div class="card">
+              <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                      <button class="btn btn-link theme-color-5 collapsed" data-toggle="collapse"
+                          data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                          View Courses
+                      </button>
+                  </h5>
+              </div>
+
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">
+                      <!-- Card Body begin -->
+                      <app-alert [alert]="alertDeleteCourse"></app-alert>
+                      <div class="row result-item theme-bgcolor-3 p-2 mb-2 text-white" *ngFor="let course of coursesList;let i= index">
+                            
+                          <div class="col-lg-2 col-md-2 col-sm-10">
+                              {{course.courseid}}
+                          </div>
+                          <div class="col-lg-2 col-md-2 col-sm-10">
+                              {{course.courseName}}
+                          </div>
+                          <div class="col-lg-2 col-md-2 col-sm-10">
+                              {{course.totalTime}} hrs.
+                          </div>
+                          <div class="col-lg-2 col-md-2 col-sm-10">
+                              {{course.technology.skillName}}
+                          </div>
+                          <div class="col-lg-2 col-md-2 col-sm-10">
+                              {{course.charges | currency:"INR"}}
+                          </div>
+                          <div class="col-lg-2 col-md-2 col-sm-10">
+                              <button class="btn theme-bgcolor-2 text-white search-item-btn" (click)="deleteCourse(course.courseid,i)">Delete
+                                  Course</button>
+                          </div>
+                      </div>
+
+
+                      <!-- Card end  -->
+                  </div>
+              </div>
+          </div>
+
+          <!-- Calendar Event Timimg  -->
+
+          <app-calendar></app-calendar>
+
+          <div class="card">
+              <div class="card-header" id="headingFour">
+                  <h5 class="mb-0">
+                      <button class="btn btn-link theme-color-5 collapsed" data-toggle="collapse"
+                          data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                          Payment Mode
+                      </button>
+                  </h5>
+              </div>
+              <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="card-body">
+
+
+
+                        <div class="row">
+                                <div class="col-lg-5 ml-auto mr-auto">
+                                  <form *ngIf="cardDetails" [formGroup]="cardDetails" (ngSubmit)="saveCardDetails(cardDetails.value)">
+                                    <h3 class="theme-color-5">Card Details</h3>
+                                    <div class="form-group">
+                                      <label for="card-number" class="theme-color-5">Card Number</label>
+                                      <input type="text" class="form-control" id="card-number" formControlName="cardNumber" placeholder="Valid Card Number"
+                                        autocomplete="off">
+                                    </div>
+                                    <div class="form-group">
+                                      <div class="row">
+                                        <div class="col-lg-7 col-sm-10 col-xs-8 m-auto">
+                                          <label for="card-month" class="theme-color-5">Expiry
+                                            Date</label>
+                                          <div class="row ">
+                                            <input type="number" formControlName="cardExpM" class="form-control col-lg-4" id="card-month" min="1" max="12"
+                                              placeholder="MM" />
+                                            <input type="number" formControlName="cardExpY" class="form-control col-lg-4" id="card-year" min="01" max="99"
+                                              placeholder="YY" />
+                                          </div>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-10 m-auto">
+                                          <label for="card-cvv" class="theme-color-5">CV Code</label>
+                                          <div class="row">
+                                            <input type="number" formControlName="cardCV"  class="form-control mr-2" id="card-cvv" min="1" max="12"
+                                              placeholder="CV" />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <button type="submit" class="btn theme-bgcolor-2 text-white mt-3">
+                                      Save
+                                    </button>
+                                  </form>
+                                </div>
+                              </div>
+                  </div>
+
+
+
+
+              </div>
+              <div class="card">
+                  <div class="card-header" id="headingFive">
+                      <h5 class="mb-0">
+                          <button class="btn btn-link theme-color-5 collapsed" data-toggle="collapse"
+                              data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                              Help & Support
+                          </button>
+                      </h5>
+                  </div>
+                  <div id="collapseFive" class="collapse" aria-labelledby="headingThree"
+                      data-parent="#accordion">
+                      <div class="card-body">
+                          <h2 class="theme-color-5">Help & Support</h2>
+                          <p class="theme-color-4">For more details contact</p>
+                          <span class="ml-auto">Email us at <a
+                                  href="mailto:help@learnapp.com">help@learnapp.com</a></span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+
+
+
+
+
+
+      </div>
+
+  </div>
+
+
+</div>

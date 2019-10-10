@@ -1,0 +1,32 @@
+<div class="container content">
+    <!-- Container Content -->
+
+    <div class="jumbotron " id="content-box">
+        <h1 class="display-6 theme-color-5">Trainings (Stats)</h1>
+
+        <hr class="my-4">
+        <div class="row result-item theme-bgcolor-3 p-4 text-white" *ngFor="let data of progressData">
+            <div class="col-lg-2 col-md-2 col-sm-10">
+                {{data.technology}}
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-10">
+                {{data.courseId | uppercase }}
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-10">
+                  Total Trainee:  <span class="badge badge-pill badge-warning p-1">{{data.totalTraineeCount}}</span>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-10">
+                  Completed Trainee(s):  <span class="badge badge-pill badge-warning p-1">{{data.courseCompleted}}</span>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-10">
+                   In Progress Trainee(s):  <span class="badge badge-pill badge-warning p-1">{{data.courseActive}}</span>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-10">
+                Total Earned Revenue : {{data.mentorEarned | currency:"INR"}}
+            </div>
+        </div>
+
+
+    </div>
+    <!-- Container Content ends -->
+</div>

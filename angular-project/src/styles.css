@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  font-family: Roboto;
+}
+
+.nav-link.active{
+  background-color: #6D00BF;
+  border-radius: 0.25rem;
+}
+
+#site-title {
+  font-size: 32px;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.theme-bgcolor-1 {
+  background-color: #6D00BF;
+}
+
+.theme-bgcolor-2 {
+  background-color: #490080;
+}
+
+.theme-bgcolor-3 {
+  background-color: #240040;
+}
+
+.theme-bgcolor-4 {
+  background-color: #240040;
+}
+
+.theme-bgcolor-5 {
+  background-color: #1D0033;
+}
+
+.theme-color-1 {
+  color: #6D00BF;
+}
+
+.theme-color-2 {
+  color: #490080;
+}
+
+.theme-color-3 {
+  color: #240040;
+}
+
+.theme-color-4 {
+  color: #240040;
+}
+
+.theme-color-5, .theme-color-5:hover, .theme-color-5:focus {
+  color: #1D0033;
+  text-decoration: none;
+}

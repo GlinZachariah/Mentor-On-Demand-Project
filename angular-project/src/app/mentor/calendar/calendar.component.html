@@ -1,0 +1,102 @@
+<div class="card">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link theme-color-5 collapsed" data-toggle="collapse"
+                    data-target="#collapseCalendar" aria-expanded="true"
+                    aria-controls="collapseCalendar">
+                    Add Calendar Event
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapseCalendar" class="collapse" aria-labelledby="headingTwo"
+            data-parent="#accordion">
+            <div class="card-body">
+                <!-- Card Body begin -->
+                <div class="row">
+                    <div class="col-lg-5 ml-auto mr-auto">
+                        <form [formGroup]="calendarForm" (ngSubmit)="saveCalendar(calendarForm.value)">
+
+                            <div class="form-group">
+                                <label for="from-date" class="theme-color-5">From date</label>
+                                <input type="date" class="form-control" id="from-date" formControlName="fromDate">
+                                
+                            </div>
+                            <div class="form-group">
+                                <label for="from-date" class="theme-color-5">Till date</label>
+                                <input type="date" class="form-control" id="till-date" formControlName="tillDate">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect3">Time Slot </label>
+                                <select class="form-control" id="exampleFormControlSelect3" formControlName="timeSlot">
+                                        <option *ngFor="let timeSlot of timeSlots" [value]="timeSlot.value">{{timeSlot.text}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect6">Status</label>
+                                <select class="form-control" id="exampleFormControlSelect6" formControlName="status">
+                                    <option>Available</option>
+                                    <option>Busy</option>
+
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn theme-bgcolor-2 text-white mt-2">Add Schedule</button>
+
+                            
+                        </form>
+                    </div>
+                </div>
+
+
+                <!-- Card end  -->
+            </div>
+        </div>
+    </div>
+    <!-- Calendar ends -->
+    <div class="card">
+        <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+                <button class="btn btn-link theme-color-5 collapsed" data-toggle="collapse"
+                    data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                    Edit Calendar
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapseThree" class="collapse " aria-labelledby="headingThree"
+            data-parent="#accordion">
+            <div class="card-body">
+                <!-- Card Body begin -->
+
+
+
+                <div class="row result-item theme-bgcolor-3 mb-2 p-2 text-white" *ngFor="let calendar of calendarList;let i= index">
+                    <div class="col-lg-2 col-md-2 col-sm-10 ">
+                        {{calendar.fromDate}}
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-10 ">
+                        {{calendar.tillDate}}
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-10 ">
+                        {{calendar.timeSlot | timeslot}}
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-10 ">
+                        {{calendar.status}}
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-10 ">
+                        <button class="btn theme-bgcolor-2 text-white search-item-btn" (click)="deleteCalendar(calendar,i)" >Delete
+                            Timings</button>
+                    </div>
+
+                </div>
+
+
+                <!-- Card end  -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+            $( "#from-date" ).datepicker({ minDate: 0});
+    </script>

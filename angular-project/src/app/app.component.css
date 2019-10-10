@@ -1,0 +1,26 @@
+#header a {
+  color: #ffffff;
+}
+
+
+#footer {
+  margin-top: 100px;
+  display: flex;
+  padding: 25px;
+}
+
+#footer .row {
+  margin: auto;
+}
+
+#footer-content {
+  font-size: 18px;
+  margin: auto;
+  vertical-align: middle;
+}
+
+#admin{
+right: 0;
+bottom: 0;
+color:#000000;
+}

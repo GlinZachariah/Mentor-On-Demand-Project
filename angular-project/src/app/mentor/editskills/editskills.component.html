@@ -1,0 +1,43 @@
+<div class="container content">
+
+
+  <div class="jumbotron " id="profile-box">
+    <h1 class="display-6 theme-color-5">Edit Skills</h1>
+    <hr class="my-4">
+    <!-- Card Entry -->
+
+    <div class="card">
+
+      <div class="card-body theme-color-5">
+        <div class="card-text">
+          <form [formGroup]="skillForm" action="mentor/home.html" (ngSubmit)="updateSkills(skillForm.value.skills)">
+
+            <div class="form-group">
+              
+              <label for="exampleFormControlSelect2">Select Skills</label>
+              <div *ngIf="isLoaded">
+              <select formControlName="skills" multiple class="form-control" id="exampleFormControlSelect2"  >
+                <!-- <option *ngFor="let mentorSkill of mentorSkills" [value]="mentorSkill">{{mentorSkill.skillName}}</option> -->
+                  <option *ngFor="let mentorSkill of mentorList"  [attr.selected]="mentorSkill.isMentorSkill == true ? true:null " [attr.value]="mentorSkill.skills.skillName">{{mentorSkill.skills.skillName}}</option>
+                
+              </select>
+            </div>
+            </div>
+
+            <button type="submit" class="btn theme-bgcolor-2 text-white mt-2">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- Card Exit -->
+
+  </div>
+
+</div>

@@ -1,0 +1,12 @@
+a {
+  color: #ffffff;
+}
+
+a.dropdown-item:active{
+  background-color: #6D00BF;
+  color:#ffffff;
+}
+
+a.theme-color-5 {
+  color: #1D0033;
+}

@@ -1,0 +1,44 @@
+<div class="container content">
+  <!-- Container Content -->
+  <div class="jumbotron " id="content-box">
+    <h1 class="display-6 theme-color-5">Reports </h1>
+    <hr class="my-4">
+    <h5 class="theme-color-5">Search Trainer</h5>
+    <form class="row" [formGroup]="generateRep" (ngSubmit)="generateReport(generateRep.value.username)">
+
+      <select class="col-lg-10 m-auto p-2 theme-color-5" id="exampleFormControlSelect3" formControlName="username" >
+        <option class="p-2" *ngFor="let mentor of mentorList">{{mentor}}</option>
+      </select>
+      <div class="col-lg-10 col-md-10 col-sm-10 m-auto p-5">
+        <button class="btn theme-bgcolor-2 text-white search-item-btn" id="generateRep" type="submit">Generate Report</button>
+      </div>
+
+    </form>
+    <div *ngIf="isReportGen">
+      <table class="table table-bordered mt-5"  >
+        <thead>
+          <tr>
+            <th scope="col">Username</th>
+            <th scope="col">Course ID</th>
+            <th scope="col">Commission % </th>
+            <th scope="col">Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let report of reportData">
+            <td>{{report.userName}}</td>
+            <td>{{report.courseId}}</td>
+            <td>{{report.commissionAmount | percent}}</td>
+            <td>{{report.paymentAmount | currency:"INR"}}</td>
+          </tr>
+          <tr>
+            <td colspan="3">Total Revenue</td>
+            <td>{{totalAmount | currency:"INR"}} /- </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  <!-- Container Ends -->
+</div>

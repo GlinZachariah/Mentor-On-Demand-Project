@@ -1,0 +1,41 @@
+[
+  {
+    "coursedetail":{
+      "courseid":"CS101",
+      "coursename":"Angular Basics",
+      "technology":"Angular",
+      "trainername":"l",
+      "charges":5000,
+      "commission":0.1
+    },
+    "username": "n",
+    "timeslot": "8",
+    "startdate": ""
+  },
+  {
+    "coursedetail":{
+      "courseid":"CS102",
+      "coursename":"Git Basics",
+      "technology":"Git",
+      "trainername":"l",
+      "charges":7000,
+      "commission":0.1
+    },
+    "username": "n",
+    "timeslot": "8",
+    "startdate": ""
+  },
+  {
+    "coursedetail":{
+      "courseid":"CS101",
+      "coursename":"Core Java",
+      "technology":"Git",
+      "trainername":"l",
+      "charges":7000,
+      "commission":0.2
+    },
+    "username": "n",
+    "timeslot": "8",
+    "startdate": ""
+  }
+]
