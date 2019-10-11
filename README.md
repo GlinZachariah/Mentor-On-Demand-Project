@@ -28,14 +28,16 @@ Mentor On Demand Project (LearnApp)
 - It can be run using CLI or IDE :
     - To run using CLI
         - Run `mvnw install` within each folder to install dependencies.
+        - configure msql and create databases with given names.
         - Run`mvnw spring-boot:run` in each folder to run the spring boot application via CLI.
      
      - To run using IDE
         - Import as Maven project and install dependencies.
+        - configure msql and create databases with given names.
         - Run the application.
         
 
-#### Default Configuration
+## Default Configuration
   
    | microservice | port| application_name | databases|
    |--------------|------|-----------------|----------|
