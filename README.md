@@ -34,7 +34,8 @@ Mentor On Demand Project (LearnApp)
         - Import as Maven project and install dependencies.
         - Run the application.
         
-  #### Default Configuration
+
+#### Default Configuration
   
    | microservice | port| application_name | databases|
    |--------------|------|-----------------|----------|
