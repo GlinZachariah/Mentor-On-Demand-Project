@@ -13,6 +13,7 @@ Mentor On Demand Project (LearnApp)
 - Angular 8
 - Maven 2.1.9 (Spring Boot)
 - Java 8
+- MySQL 5.7+
 
 # Project Setup
 
@@ -34,10 +35,15 @@ Mentor On Demand Project (LearnApp)
         - Run the application.
         
   #### Default Configuration
-   | microservice | port| application_name | 
-   |--------------|------|-----------------|
-   |mentor |`htttp://localhost:8761/`|mentor|
-
-
+  
+   | microservice | port| application_name | databases|
+   |--------------|------|-----------------|----------|
+   |learnapp-server |`htttp://localhost:8761/`|learnapp-server| |
+   |learnapp-mentor-client |`htttp://localhost:8092/`|mentor|learnapp_mentor|
+   |leanapp-user-client|`htttp://localhost:8091/`|users|learnapp_user|
+   |leanapp-admin-client|`htttp://localhost:8093/`|admin|learnapp_admin|
+   
+   ##### Database username:`root`
+   ##### Database password:`root`
 
 
